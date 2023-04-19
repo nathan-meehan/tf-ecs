@@ -14,6 +14,7 @@ provider "aws" {
 
 module "vpc" {
     source = "./vpc"
+    vpc_cidr_block = "30.0.0.0/16"
 }
 
 module "sg" {
