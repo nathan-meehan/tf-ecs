@@ -40,12 +40,12 @@ resource "aws_ecs_task_definition" "app_def_tf" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = 1024
   memory                   = 2048
-  execution_role_arn       = "arn:aws:iam::535566415663:role/LabRole"
+  execution_role_arn       = var.exec_role_arn
 
   container_definitions = <<DEFINITION
 [
   {
-    "image": "535566415663.dkr.ecr.us-east-1.amazonaws.com/tf-cloud:latest",
+    "image": "${var.image_uri}",
     "cpu": 1024,
     "memory": 2048,
     "name": "lighttpd-service",

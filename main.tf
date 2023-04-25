@@ -27,4 +27,6 @@ module "ecs" {
     vpc_id = module.vpc.vpc_tf_id
     sg_ids = module.sg.vpc_tf_sg_id
     subnet_ids = module.vpc.vpc_subnets
+    image_uri = ""
+    exec_role_arn = ""
 }
